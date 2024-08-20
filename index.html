@@ -6,11 +6,13 @@
     <title>CryptoGuard - Next-Gen Blockchain Security</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <style>
         :root {
-            --primary-color: #00ffff;
-            --secondary-color: #ff00ff;
-            --bg-color: #000033;
+            --primary-color: #4ecdc4;
+            --secondary-color: #45b7aa;
+            --accent-color: #ff6b6b;
+            --bg-color: #1a2639;
             --text-color: #ffffff;
         }
 
@@ -45,7 +47,7 @@
         }
 
         .navbar.scrolled {
-            background-color: rgba(0, 0, 51, 0.9);
+            background-color: rgba(26, 38, 57, 0.9);
         }
 
         .navbar .container {
@@ -101,6 +103,19 @@
             font-size: 4rem;
             margin-bottom: 20px;
             line-height: 1.2;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(78, 205, 196, 0.5), 0 0 10px rgba(78, 205, 196, 0.5);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(78, 205, 196, 0.8), 0 0 20px rgba(78, 205, 196, 0.8);
+            }
         }
 
         .hero p {
@@ -111,8 +126,8 @@
 
         .cta-button {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--bg-color);
+            background-color: var(--accent-color);
+            color: var(--text-color);
             padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
@@ -122,7 +137,7 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
         }
 
         .hero-bg {
@@ -131,7 +146,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--bg-color), #000066);
+            background: linear-gradient(45deg, var(--bg-color), #2a3b50);
         }
 
         .particles {
@@ -145,7 +160,7 @@
         /* Features Section */
         .features {
             padding: 100px 0;
-            background-color: #000044;
+            background-color: #1e2c3a;
         }
 
         .features h2 {
@@ -153,6 +168,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 50px;
+            color: var(--primary-color);
         }
 
         .feature-grid {
@@ -171,7 +187,7 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
         }
 
         .feature-icon {
@@ -184,12 +200,14 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--secondary-color);
         }
 
         /* How It Works Section */
         .how-it-works {
             padding: 100px 0;
-            background-color: #000055;
+            background-color: #253547;
+            position: relative;
         }
 
         .how-it-works h2 {
@@ -197,6 +215,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 50px;
+            color: var(--primary-color);
         }
 
         .timeline {
@@ -281,10 +300,133 @@
             border-radius: 6px;
         }
 
+        .timeline-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Core Technology Section */
+        .core-tech {
+            padding: 100px 0;
+            background-color: #1e2c3a;
+            text-align: center;
+        }
+
+        .core-tech h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .cube-wrapper {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--primary-color);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            background-color: rgba(78, 205, 196, 0.1);
+        }
+
+        .front { transform: translateZ(100px); }
+        .back { transform: translateZ(-100px) rotateY(180deg); }
+        .right { transform: translateX(100px) rotateY(90deg); }
+        .left { transform: translateX(-100px) rotateY(-90deg); }
+        .top { transform: translateY(-100px) rotateX(90deg); }
+        .bottom { transform: translateY(100px) rotateX(-90deg); }
+
+        @keyframes rotate {
+            from { transform: rotateX(0) rotateY(0); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* Network Section */
+        .network-section {
+            padding: 100px 0;
+            background-color: #253547;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 20px;
+            padding: 50px 0;
+        }
+
+        .network-node {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .network-line {
+            position: absolute;
+            background: var(--primary-color);
+            height: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.2; }
+        }
+
+        .data-stream {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+            background-size: 100% 20px;
+            animation: dataStream 20s linear infinite;
+            opacity: 0.05;
+        }
+
+        @keyframes dataStream {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 1000px; }
+        }
+
         /* Testimonials Section */
         .testimonials {
             padding: 100px 0;
-            background-color: #000066;
+            background-color: #1e2c3a;
         }
 
         .testimonials h2 {
@@ -292,6 +434,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 50px;
+            color: var(--primary-color);
         }
 
         .testimonial-slider {
@@ -313,6 +456,7 @@
 
         .testimonial-author {
             font-weight: 700;
+            color: var(--secondary-color);
         }
 
         .testimonial-company {
@@ -322,7 +466,7 @@
         /* CTA Section */
         .cta {
             padding: 100px 0;
-            background: linear-gradient(45deg, #000077, #000099);
+            background: linear-gradient(45deg, #1e2c3a, #253547);
             text-align: center;
         }
 
@@ -330,6 +474,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 30px;
+            color: var(--primary-color);
         }
 
         .cta p {
@@ -340,9 +485,9 @@
             margin-right: auto;
         }
 
-        /* Footer */
-        .footer {
-            background-color: #000033;
+/* Footer */
+.footer {
+            background-color: #1a2639;
             padding: 50px 0;
             text-align: center;
         }
@@ -418,6 +563,17 @@
             .right {
                 left: 0%;
             }
+
+            .cube-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cube-face {
+                width: 150px;
+                height: 150px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -438,9 +594,9 @@
         <div class="hero-bg"></div>
         <div id="particles-js" class="particles"></div>
         <div class="container hero-content">
-            <h1>Secure Your Digital Future with Blockchain</h1>
+            <h1>Secure Your Digital Future</h1>
             <p>CryptoGuard provides cutting-edge cybersecurity solutions powered by blockchain technology, ensuring unparalleled protection for your digital assets.</p>
-            <a href="#" class="cta-button">Explore Our Solutions</a>
+            <a href="#features" class="cta-button">Explore Our Solutions</a>
         </div>
     </section>
 
@@ -499,25 +655,54 @@
         </div>
     </section>
 
+    <section class="core-tech">
+        <div class="container">
+            <h2>The Core of Our Technology</h2>
+            <div class="cube-wrapper">
+                <div class="cube">
+                    <div class="cube-face front">Blockchain</div>
+                    <div class="cube-face back">Security</div>
+                    <div class="cube-face right">Encryption</div>
+                    <div class="cube-face left">Privacy</div>
+                    <div class="cube-face top">AI</div>
+                    <div class="cube-face bottom">Innovation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="network-section">
+        <div class="container">
+            <h2>Our Global Security Network</h2>
+            <div class="network-grid">
+                <!-- Network nodes will be dynamically added here -->
+            </div>
+        </div>
+        <div class="data-stream"></div>
+    </section>
+
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2>What Our Clients Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide">
-                    <p class="testimonial-content">"CryptoGuard has revolutionized our approach to data security. We've never felt safer in the digital realm."</p>
-                    <p class="testimonial-author">John Doe</p>
-                    <p class="testimonial-company">CEO, TechInnovate Inc.</p>
+            <div class="testimonial-slider swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-slide">
+                        <p class="testimonial-content">"CryptoGuard has revolutionized our approach to data security. We've never felt safer in the digital realm."</p>
+                        <p class="testimonial-author">John Doe</p>
+                        <p class="testimonial-company">CEO, TechInnovate Inc.</p>
+                    </div>
+                    <div class="swiper-slide testimonial-slide">
+                        <p class="testimonial-content">"The blockchain-based security provided by CryptoGuard is unparalleled. It's a game-changer for our industry."</p>
+                        <p class="testimonial-author">Jane Smith</p>
+                        <p class="testimonial-company">CTO, SecureFinance</p>
+                    </div>
+                    <div class="swiper-slide testimonial-slide">
+                        <p class="testimonial-content">"Implementation was smooth, and the results were immediate. CryptoGuard has exceeded our expectations."</p>
+                        <p class="testimonial-author">Mike Johnson</p>
+                        <p class="testimonial-company">CISO, Global Enterprises</p>
+                    </div>
                 </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-content">"The blockchain-based security provided by CryptoGuard is unparalleled. It's a game-changer for our industry."</p>
-                    <p class="testimonial-author">Jane Smith</p>
-                    <p class="testimonial-company">CTO, SecureFinance</p>
-                </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-content">"Implementation was smooth, and the results were immediate. CryptoGuard has exceeded our expectations."</p>
-                    <p class="testimonial-author">Mike Johnson</p>
-                    <p class="testimonial-company">CISO, Global Enterprises</p>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -551,17 +736,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
         // Particles.js configuration
         particlesJS("particles-js", {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                color: { value: "#4ecdc4" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
                 opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
                 size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
-                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                line_linked: { enable: true, distance: 150, color: "#4ecdc4", opacity: 0.4, width: 1 },
                 move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
             },
             interactivity: {
@@ -583,7 +768,7 @@
                 end: "+=100",
                 scrub: true
             },
-            backgroundColor: "rgba(0, 0, 51, 0.9)",
+            backgroundColor: "rgba(26, 38, 57, 0.9)",
             height: "70px",
             ease: "none"
         });
@@ -620,6 +805,63 @@
             duration: 0.8
         });
 
+        // 3D Cube animation
+        gsap.to(".cube", {
+            scrollTrigger: {
+                trigger: ".core-tech",
+                start: "top center",
+                end: "bottom top",
+                scrub: 1
+            },
+            rotateX: 360,
+            rotateY: 360,
+            ease: "none"
+        });
+
+        // Network nodes animation
+        const networkGrid = document.querySelector('.network-grid');
+        for (let i = 0; i < 64; i++) {
+            const node = document.createElement('div');
+            node.classList.add('network-node');
+            networkGrid.appendChild(node);
+        }
+
+        gsap.from(".network-node", {
+            scrollTrigger: {
+                trigger: ".network-section",
+                start: "top center"
+            },
+            scale: 0,
+            opacity: 0,
+            stagger: {
+                grid: [8, 8],
+                from: "center",
+                amount: 0.5
+            },
+            duration: 0.5
+        });
+
+        // Create network lines
+        const nodes = document.querySelectorAll('.network-node');
+        nodes.forEach((node, index) => {
+            if (index % 8 !== 7) { // Horizontal lines
+                const line = document.createElement('div');
+                line.classList.add('network-line');
+                line.style.width = '100%';
+                line.style.top = '50%';
+                line.style.left = '100%';
+                node.appendChild(line);
+            }
+            if (index < 56) { // Vertical lines
+                const line = document.createElement('div');
+                line.classList.add('network-line');
+                line.style.height = '100%';
+                line.style.top = '100%';
+                line.style.left = '50%';
+                node.appendChild(line);
+            }
+        });
+
         // Testimonial slider
         const testimonialSlider = new Swiper('.testimonial-slider', {
             slidesPerView: 1,
@@ -633,32 +875,224 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-
-        // CTA section animation
-        gsap.from(".cta", {
-            scrollTrigger: {
-                trigger: ".cta",
-                start: "top bottom"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 0.8
         });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.createElement('button');
+        mobileMenuToggle.classList.add('mobile-menu-toggle');
+        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.querySelector('.navbar .container').appendChild(mobileMenuToggle);
+
+        mobileMenuToggle.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Add this CSS for mobile menu
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    width: 100%;
+                    background-color: rgba(26, 38, 57, 0.9);
+                    padding: 20px;
+                }
+                .nav-links.active {
+                    display: flex;
+                }
+                .nav-links li {
+                    margin: 10px 0;
+                }
+                .mobile-menu-toggle {
+                    display: block;
+                    background: none;
+                    border: none;
+                    color: var(--primary-color);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Preloader
+        const preloader = document.createElement('div');
+        preloader.classList.add('preloader');
+        preloader.innerHTML = '<div class="loader"></div>';
+        document.body.appendChild(preloader);
+
+        window.addEventListener('load', () => {
+            preloader.style.display = 'none';
+        });
+
+        // Add this CSS for preloader
+        const preloaderStyle = document.createElement('style');
+        preloaderStyle.textContent = `
+            .preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--bg-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            .loader {
+                width: 50px;
+                height: 50px;
+                border: 5px solid var(--primary-color);
+                border-top: 5px solid var(--secondary-color);
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(preloaderStyle);
+
+        // Intersection Observer for fade-in animations
+        const fadeElems = document.querySelectorAll('.feature-card, .timeline-item, .testimonial-slide');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElems.forEach(elem => {
+            elem.style.opacity = 0;
+            elem.style.transform = 'translateY(20px)';
+            elem.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            fadeObserver.observe(elem);
+        });
+
+        // Typewriter effect for hero title
+        const heroTitle = document.querySelector('.hero h1');
+        const titleText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < titleText.length) {
+                heroTitle.textContent += titleText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        setTimeout(typeWriter, 1000);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Number counter animation
+        function animateNumber(elem, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                elem.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Add number counters to the page
+        const statsSection = document.createElement('section');
+        statsSection.classList.add('stats');
+        statsSection.innerHTML = `
+            <div class="container">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="1000">0</h3>
+                    <p>Clients Protected</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="99">0</h3>
+                    <p>Security Score</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="5000">0</h3>
+                    <p>Threats Blocked</p>
+                </div>
+            </div>
+        `;
+        document.querySelector('.features').after(statsSection);
+
+        // Animate numbers when in view
+        const numberElems = document.querySelectorAll('.stat-number');
+        const numberObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateNumber(entry.target, 0, target, 2000);
+                    numberObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        numberElems.forEach(elem => {
+            numberObserver.observe(elem);
+        });
+
+        // Add this CSS for stats section
+        const statsStyle = document.createElement('style');
+        statsStyle.textContent = `
+            .stats {
+                background-color: #253547;
+                padding: 50px 0;
+                text-align: center;
+            }
+            .stats .container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .stat-item {
+                margin: 20px;
+            }
+            .stat-number {
+                font-size: 3rem;
+                font-weight: bold;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+            }
+            .stat-item p {
+                color: var(--text-color);
+                font-size: 1.2rem;
+            }
+        `;
+        document.head.appendChild(statsStyle);
     </script>
 </body>
 </html>
