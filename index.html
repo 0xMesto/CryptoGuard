@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoGuard - Blockchain-based Cybersecurity Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57c5b6;
+            --accent-color: #159895;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(26, 95, 122, 0.9) !important;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(26, 95, 122, 0.7), rgba(26, 95, 122, 0.7)), url('https://source.unsplash.com/random/1920x1080/?cybersecurity');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CryptoGuard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary ms-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="mb-4">Secure Your Digital Assets with Blockchain Technology</h1>
+                    <p class="lead mb-5">CryptoGuard provides cutting-edge cybersecurity solutions powered by blockchain for unparalleled data protection and secure transactions.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Protect Your Data Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <i class="fas fa-shield-alt feature-icon mb-3"></i>
+                        <h3>Blockchain Security</h3>
+                        <p>Leverage the power of blockchain for tamper-proof data protection and authentication.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <i class="fas fa-exchange-alt feature-icon mb-3"></i>
+                        <h3>Secure Transactions</h3>
+                        <p>Ensure the integrity and confidentiality of your financial transactions with our advanced protocols.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <i class="fas fa-user-shield feature-icon mb-3"></i>
+                        <h3>Identity Protection</h3>
+                        <p>Safeguard your digital identity with our state-of-the-art blockchain-based authentication system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How CryptoGuard Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://source.unsplash.com/random/600x400/?blockchain" alt="How CryptoGuard Works" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <div class="steps">
+                        <div class="step mb-4">
+                            <h4>1. Data Encryption</h4>
+                            <p>Your sensitive data is encrypted using advanced algorithms.</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h4>2. Blockchain Integration</h4>
+                            <p>Encrypted data is securely stored on our decentralized blockchain network.</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h4>3. Smart Contract Execution</h4>
+                            <p>Automated smart contracts ensure secure and transparent transactions.</p>
+                        </div>
+                        <div class="step">
+                            <h4>4. Continuous Monitoring</h4>
+                            <p>Our AI-powered system constantly monitors for potential threats and vulnerabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://source.unsplash.com/random/80x80/?portrait" alt="Client 1" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">John Doe</h5>
+                                <p class="mb-0 text-muted">CEO, Tech Innovators</p>
+                            </div>
+                        </div>
+                        <p>"CryptoGuard has revolutionized our approach to data security. We've never felt safer."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://source.unsplash.com/random/80x80/?woman" alt="Client 2" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Jane Smith</h5>
+                                <p class="mb-0 text-muted">CTO, FinTech Solutions</p>
+                            </div>
+                        </div>
+                        <p>"The blockchain-based security provided by CryptoGuard is unparalleled. It's a game-changer for our industry."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://source.unsplash.com/random/80x80/?man" alt="Client 3" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Mike Johnson</h5>
+                                <p class="mb-0 text-muted">CISO, Global Enterprises</p>
+                            </div>
+                        </div>
+                        <p>"CryptoGuard's solution has significantly reduced our cybersecurity risks. Highly recommended!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Secure Your Digital Future?</h2>
+            <p class="lead mb-4">Join thousands of satisfied clients who trust CryptoGuard for their cybersecurity needs.</p>
+            <a href="#" class="btn btn-light btn-lg">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>CryptoGuard</h5>
+                    <p>Blockchain-based cybersecurity solutions for the digital age.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <p class="text-center mb-0">&copy; 2024 CryptoGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        // Wait for the DOM to be fully loaded and GSAP to be available
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // Check if GSAP is loaded
+            if (typeof gsap !== 'undefined') {
+                // GSAP is loaded, proceed with animations
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Navbar scroll effect
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        document.querySelector('.navbar').classList.add('scrolled');
+                    } else {
+                        document.querySelector('.navbar').classList.remove('scrolled');
+                    }
+                });
+
+                // Smooth scrolling for internal links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+
+                // Feature cards animation
+                gsap.utils.toArray('.card').forEach((card, i) => {
+                    gsap.from(card, {
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top bottom-=100",
+                            toggleActions: "play none none reverse"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        delay: i * 0.2
+                    });
+                });
+
+                // How It Works steps animation
+                gsap.utils.toArray('.step').forEach((step, i) => {
+                    gsap.from(step, {
+                        scrollTrigger: {
+                            trigger: step,
+                            start: "top bottom-=100",
+                            toggleActions: "play none none reverse"
+                        },
+                        x: -50,
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        delay: i * 0.3
+                    });
+                });
+
+                // Testimonials animation
+                gsap.utils.toArray('#testimonials .card').forEach((card, i) => {
+                    gsap.from(card, {
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top bottom-=50",
+                            toggleActions: "play none none reverse"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: "power2.out",
+                        delay: i * 0.2
+                    });
+                });
+
+                // CTA section animation
+                gsap.from(".cta-section", {
+                    scrollTrigger: {
+                        trigger: ".cta-section",
+                        start: "top bottom-=100",
+                        toggleActions: "play none none reverse"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            } else {
+                console.error('GSAP is not loaded. Animations will not work.');
+            }
+
+            // Lazy loading for images
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                // ... (keep the existing fallback code here)
+            }
+
+            // Form submission handling
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                alert('Thank you for subscribing!');
+                this.reset();
+            });
+
+            // Performance optimizations
+            // Defer non-critical CSS
+            var stylesheet = document.createElement('link');
+            stylesheet.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css';
+            stylesheet.rel = 'stylesheet';
+            stylesheet.type = 'text/css';
+            stylesheet.media = 'print';
+            document.head.appendChild(stylesheet);
+            setTimeout(function() {
+                stylesheet.media = 'all';
+            }, 100);
+
+            // Preload hero image
+            var heroImage = new Image();
+            heroImage.src = 'https://source.unsplash.com/random/1920x1080/?cybersecurity';
+        });
+    </script>
+</body>
+</html>
